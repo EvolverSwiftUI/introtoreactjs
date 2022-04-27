@@ -93,6 +93,51 @@
     </script> -->
 
     <!-- Importing JS code from External file -->
-    <script type="text/babel" src="ExternalFileJSCode.js"></script>
+    <!-- <script type="text/babel" src="ExternalFileJSCode.js"></script> -->
+  
+    <!-- JSX Component -->
+    <!-- const Welcome = () => <h1 className="greeting">Hello, World!</h1>;
+    ReactDOM.render(<Welcome/>, document.getElementById("root")); -->
+
+    <!-- Adding props, to pass additional info to Component -->
+   <!-- <script type="text/babel">
+     const Welcome = (props) => {
+       console.log(props);
+       const { greeting, name } = props;
+      //  return <h1 className="greeting">Hello, World! </h1>
+       return <h1 className="message">{greeting}, {name}! </h1>
+     }
+     ReactDOM.render(<Welcome name="Sivaram" greeting="Hello"/>, document.getElementById("root"));
+   </script>    -->
+
+   <!-- Reusable concept on Components -->
+   <!-- <script type="text/babel">
+     const Welcome = (props) => {
+       const {name, greeting} = props;
+       return <h1> {greeting}, {name}! </h1>
+     }
+     ReactDOM.render(
+      <div>
+        <Welcome name="Sivaram" greeting="Hello"/> 
+        <Welcome name="Vignesh" greeting="Hi"/>
+      </div>, 
+       document.getElementById("root")
+    );
+   </script> -->
+
+   <!-- Composable concept on Components -->
+    <script type="text/babel">
+      const Welcome = (props) => {
+        const {name, greeting} = props;
+        return <h1> {greeting}, {name}! </h1>
+      }
+      const Greetings = () => (
+        <div>
+          <Welcome name="Sivaram" greeting="Hello"/> 
+          <Welcome name="Vignesh" greeting="Hi"/>
+        </div>
+      );
+      ReactDOM.render( <Greetings/>, document.getElementById("root"));
+    </script>
   </body>
 </html>
